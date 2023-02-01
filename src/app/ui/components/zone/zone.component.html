@@ -1,1 +1,9 @@
-<h2>Zone</h2>
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <label for="zoneName">Zone Name</label>
+      <input type="text" id="zoneName" name="zoneName" [(ngModel)]="zoneName" />
+    </div>
+    <button type="Submit">Submit</button>
+  </form>
+</div>

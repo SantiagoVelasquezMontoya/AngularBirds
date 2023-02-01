@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 import { ZoneService } from 'src/app/infrastructure/driven-adapter/zone/zone.service';
 import { ZoneGateway } from 'src/app/domain/models/zone/gateway/zone.gateway';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ZoneComponent],
-  imports: [CommonModule, DomainModule, HttpClientModule],
+  imports: [CommonModule, DomainModule, HttpClientModule, FormsModule],
   providers: [
     {
       provide: ZoneGateway,

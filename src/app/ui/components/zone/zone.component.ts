@@ -1,3 +1,4 @@
+import { IZoneModel } from './../../../domain/models/zone/zone.model';
 import { ZoneUseCase } from './../../../domain/usecases/zone.usecase';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,15 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZoneComponent implements OnInit {
   constructor(private zoneUseCase: ZoneUseCase) {}
+  zoneName: string;
 
   data: any = {
     id: 1,
     zoneName: 'Tropical',
   };
 
-  ngOnInit(): void {
-    this.zoneUseCase.createZone(this.data).subscribe((res) => {
+  ngOnInit(): void {}
+
+  onSubmit() {
+    const data: IZoneModel = {
+      zoneName: this.zoneName,
+    };
+    this.zoneUseCase.createZone(data).subscribe((res) => {
       console.log(res);
+      this.zoneName = '';
     });
   }
 }

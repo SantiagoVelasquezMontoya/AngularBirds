@@ -14,9 +14,6 @@ export class ZoneService extends ZoneGateway {
 
   createZone(zone: IZoneModel): Observable<IZoneModel> {
     console.log('LLegue Service');
-    return this.http.post<IZoneModel>(
-      'https://jsonplaceholder.typicode.com/users',
-      zone
-    );
+    return this.http.post<IZoneModel>('http://localhost:10000/zone', zone);
   }
 }
