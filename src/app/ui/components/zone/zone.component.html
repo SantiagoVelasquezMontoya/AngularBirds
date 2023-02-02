@@ -18,6 +18,7 @@
       <li *ngFor="let zone of currentZones">
         <p>{{ zone.zoneName }}</p>
         <button (click)="onDelete(zone.id)">Delete</button>
+        <button (click)="setZoneToUpdate(zone)">Edit</button>
       </li>
     </ul>
   </div>
@@ -27,4 +28,19 @@
       <h2>There aren't any zones yet...</h2>
     </div>
   </ng-template>
+
+  <div class="form-container">
+    <form (ngSubmit)="onUpdateSubmit()">
+      <div class="input-group">
+        <label for="updateZoneName">Update Zone</label>
+        <input
+          type="text"
+          id="updateZoneName"
+          name="updateZoneName"
+          [(ngModel)]="updateZone.zoneName"
+        />
+      </div>
+      <button type="Submit">Update</button>
+    </form>
+  </div>
 </div>

@@ -12,7 +12,9 @@ export class ZoneComponent implements OnInit {
   zoneName: string;
   currentZones: IZoneModel[] | any = [];
   //Update
-  updateZoneName: string;
+  updateZone: IZoneModel = {
+    zoneName: '',
+  };
 
   data: any = {
     id: 1,
@@ -42,5 +44,19 @@ export class ZoneComponent implements OnInit {
     });
   }
 
-  onUpdate(zone: IZoneModel) {}
+  setZoneToUpdate(zone: IZoneModel) {
+    console.log(zone);
+    this.updateZone = zone;
+  }
+
+  onUpdateSubmit() {
+    const data: IZoneModel = {
+      id: this.updateZone.id,
+      zoneName: this.updateZone.zoneName,
+    };
+
+    this.zoneUseCase.updateZone(data).subscribe((res) => {
+      console.log('Zone Updated', res);
+    });
+  }
 }
