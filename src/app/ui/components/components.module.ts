@@ -16,27 +16,27 @@ import { ZoneGateway } from 'src/app/domain/models/zone/gateway/zone.gateway';
 import { CountryGateway } from 'src/app/domain/models/country/gateway/country.gateway';
 import { BirdComponent } from './bird/bird.component';
 
-function zoneZoneCaseFactory(zoneGateway: ZoneGateway): ZoneUseCase {
-  return new ZoneUseCase(zoneGateway);
-}
+// function zoneZoneCaseFactory(zoneGateway: ZoneGateway): ZoneUseCase {
+//   return new ZoneUseCase(zoneGateway);
+// }
 
-export const zoneZoneCaseProvider = {
-  provide: ZoneGateway,
-  useFactory: zoneZoneCaseFactory,
-  deps: [ZoneGateway],
-};
-//Country
-function countryCountryCaseFactory(
-  countryGateway: CountryGateway
-): CountryUseCase {
-  return new CountryUseCase(countryGateway);
-}
+// export const zoneZoneCaseProvider = {
+//   provide: ZoneGateway,
+//   useFactory: zoneZoneCaseFactory,
+//   deps: [ZoneGateway],
+// };
+// //Country
+// function countryCountryCaseFactory(
+//   countryGateway: CountryGateway
+// ): CountryUseCase {
+//   return new CountryUseCase(countryGateway);
+// }
 
-export const countryCountryCaseProvider = {
-  provide: CountryGateway,
-  useFactory: countryCountryCaseFactory,
-  deps: [CountryGateway],
-};
+// export const countryCountryCaseProvider = {
+//   provide: CountryGateway,
+//   useFactory: countryCountryCaseFactory,
+//   deps: [CountryGateway],
+// };
 
 @NgModule({
   declarations: [ZoneComponent, CountryComponent, BirdComponent],

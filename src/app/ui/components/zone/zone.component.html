@@ -1,9 +1,30 @@
-<div class="form-container">
-  <form (ngSubmit)="onSubmit()">
-    <div class="input-group">
-      <label for="zoneName">Zone Name</label>
-      <input type="text" id="zoneName" name="zoneName" [(ngModel)]="zoneName" />
+<div class="container">
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="zoneName">Zone Name</label>
+        <input
+          type="text"
+          id="zoneName"
+          name="zoneName"
+          [(ngModel)]="zoneName"
+        />
+      </div>
+      <button type="Submit">Submit</button>
+    </form>
+  </div>
+  <div class="zones-container">
+    <ul *ngIf="currentZones.length > 0; else noZones">
+      <li *ngFor="let zone of currentZones">
+        <p>{{ zone.zoneName }}</p>
+        <button (click)="onDelete(zone.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noZones>
+    <div>
+      <h2>There aren't any zones yet...</h2>
     </div>
-    <button type="Submit">Submit</button>
-  </form>
+  </ng-template>
 </div>

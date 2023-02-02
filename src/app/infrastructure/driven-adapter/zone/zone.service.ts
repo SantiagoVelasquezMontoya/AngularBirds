@@ -20,4 +20,8 @@ export class ZoneService extends ZoneGateway {
   getZones(): Observable<IZoneModel[]> {
     return this.http.get<IZoneModel[]>('http://localhost:10000/zone');
   }
+
+  deleteZone(): Observable<boolean> {
+    return this.http.delete<boolean>('http://localhost:10000/zone');
+  }
 }

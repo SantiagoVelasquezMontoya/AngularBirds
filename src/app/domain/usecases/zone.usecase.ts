@@ -24,4 +24,12 @@ export class ZoneUseCase {
       })
     );
   }
+
+  deleteZone(id: number): Observable<boolean | null> {
+    return this.zoneGateway.deleteZone(id).pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
+  }
 }

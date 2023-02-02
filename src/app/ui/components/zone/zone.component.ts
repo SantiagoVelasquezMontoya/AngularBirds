@@ -10,13 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class ZoneComponent implements OnInit {
   constructor(private zoneUseCase: ZoneUseCase) {}
   zoneName: string;
+  currentZones: IZoneModel[] | any = [];
 
   data: any = {
     id: 1,
     zoneName: 'Tropical',
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.zoneUseCase.getZones().subscribe((res) => {
+      this.currentZones = res;
+    });
+  }
 
   onSubmit() {
     const data: IZoneModel = {
@@ -25,6 +30,13 @@ export class ZoneComponent implements OnInit {
     this.zoneUseCase.createZone(data).subscribe((res) => {
       console.log(res);
       this.zoneName = '';
+    });
+  }
+
+  onDelete(id: number) {
+    console.log('Deleting', id);
+    this.zoneUseCase.deleteZone(id).subscribe((res) => {
+      console.log(res);
     });
   }
 }
