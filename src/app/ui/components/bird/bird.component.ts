@@ -50,4 +50,16 @@ export class BirdComponent implements OnInit {
       console.log(res);
     });
   }
+
+  TESTBirdUpdate() {
+    const testData: IBirdModel = {
+      id: 1,
+      commonName: 'Gaviota',
+      scientificName: 'Gaviotus',
+      countriesId: [1],
+    };
+    this.birdUseCase.updateBird(testData).subscribe((res) => {
+      console.log(res);
+    });
+  }
 }
