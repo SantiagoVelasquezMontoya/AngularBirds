@@ -15,14 +15,14 @@ export class BirdComponent implements OnInit {
   };
   countries: any[] | null;
   country: any;
-  birds: any[] | null;
+  birds: any[] | any = [];
   constructor(
     private birdUseCase: BirdUseCase,
     private countryUseCase: CountryUseCase
   ) {}
 
   ngOnInit(): void {
-    this.countryUseCase.getZones().subscribe((res) => {
+    this.countryUseCase.getCountries().subscribe((res) => {
       console.log(res);
       this.countries = res;
     });
@@ -40,6 +40,13 @@ export class BirdComponent implements OnInit {
     };
     console.log(data);
     this.birdUseCase.createBird(data).subscribe((res) => {
+      console.log(res);
+    });
+  }
+
+  onDelete(id: number) {
+    console.log('Deleting Bird', id);
+    this.birdUseCase.deleteBird(id).subscribe((res) => {
       console.log(res);
     });
   }

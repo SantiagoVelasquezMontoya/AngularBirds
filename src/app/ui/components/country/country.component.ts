@@ -13,6 +13,8 @@ export class CountryComponent implements OnInit {
   countryName: string;
   zone: any;
   zones: IZoneModel[] | null = [];
+  currentCountries: ICountryModel[] | any = [];
+  //Update
 
   constructor(
     private countryUseCase: CountryUseCase,
@@ -24,6 +26,9 @@ export class CountryComponent implements OnInit {
       console.log(res);
       this.zones = res;
     });
+    this.countryUseCase.getCountries().subscribe((res) => {
+      this.currentCountries = res;
+    });
   }
 
   onSubmit() {
@@ -34,6 +39,13 @@ export class CountryComponent implements OnInit {
     console.log('Sending', data);
 
     this.countryUseCase.createCountry(data).subscribe((res) => {
+      console.log(res);
+    });
+  }
+
+  onDelete(id: number) {
+    console.log('Deleting Country', id);
+    this.countryUseCase.deleteCountry(id).subscribe((res) => {
       console.log(res);
     });
   }

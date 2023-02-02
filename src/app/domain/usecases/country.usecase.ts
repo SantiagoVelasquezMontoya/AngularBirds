@@ -17,8 +17,16 @@ export class CountryUseCase {
     );
   }
 
-  getZones(): Observable<ICountryModel[] | null> {
+  getCountries(): Observable<ICountryModel[] | null> {
     return this.countryGateway.getCountries().pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
+  }
+
+  deleteCountry(id: number): Observable<boolean | null> {
+    return this.countryGateway.deleteCountry(id).pipe(
       catchError(() => {
         return of(null);
       })

@@ -32,4 +32,12 @@ export class ZoneUseCase {
       })
     );
   }
+
+  updateZone(zone: IZoneModel): Observable<IZoneModel | null> {
+    return this.zoneGateway.updateZone(zone).pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
+  }
 }

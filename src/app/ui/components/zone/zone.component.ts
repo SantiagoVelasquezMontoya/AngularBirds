@@ -11,6 +11,8 @@ export class ZoneComponent implements OnInit {
   constructor(private zoneUseCase: ZoneUseCase) {}
   zoneName: string;
   currentZones: IZoneModel[] | any = [];
+  //Update
+  updateZoneName: string;
 
   data: any = {
     id: 1,
@@ -39,4 +41,6 @@ export class ZoneComponent implements OnInit {
       console.log(res);
     });
   }
+
+  onUpdate(zone: IZoneModel) {}
 }

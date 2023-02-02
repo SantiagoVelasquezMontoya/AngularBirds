@@ -19,4 +19,8 @@ export class BirdService extends BirdGateway {
   getBirds(): Observable<IBirdModel[]> {
     return this.http.get<IBirdModel[]>('http://localhost:10000/bird');
   }
+
+  deleteBird(): Observable<boolean> {
+    return this.http.delete<boolean>('/bird');
+  }
 }
