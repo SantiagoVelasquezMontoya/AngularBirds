@@ -16,11 +16,6 @@ export class ZoneComponent implements OnInit {
     zoneName: '',
   };
 
-  data: any = {
-    id: 1,
-    zoneName: 'Tropical',
-  };
-
   ngOnInit(): void {
     this.zoneUseCase.getZones().subscribe((res) => {
       this.currentZones = res;

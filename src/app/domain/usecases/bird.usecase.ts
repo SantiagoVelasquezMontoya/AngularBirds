@@ -31,4 +31,12 @@ export class BirdUseCase {
       })
     );
   }
+
+  updateBird(bird: IBirdModel): Observable<IBirdModel | null> {
+    return this.birdGateway.updateBird(bird).pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
+  }
 }

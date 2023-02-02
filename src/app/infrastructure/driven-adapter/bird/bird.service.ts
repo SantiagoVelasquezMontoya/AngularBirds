@@ -23,4 +23,8 @@ export class BirdService extends BirdGateway {
   deleteBird(): Observable<boolean> {
     return this.http.delete<boolean>('/bird');
   }
+
+  updateBird(bird: IBirdModel): Observable<IBirdModel> {
+    return this.http.put<IBirdModel>('/bird', bird);
+  }
 }
