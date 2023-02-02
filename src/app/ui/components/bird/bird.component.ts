@@ -15,6 +15,7 @@ export class BirdComponent implements OnInit {
   };
   countries: any[] | null;
   country: any;
+  birds: any[] | null;
   constructor(
     private birdUseCase: BirdUseCase,
     private countryUseCase: CountryUseCase
@@ -24,6 +25,10 @@ export class BirdComponent implements OnInit {
     this.countryUseCase.getZones().subscribe((res) => {
       console.log(res);
       this.countries = res;
+    });
+    this.birdUseCase.getBirds().subscribe((res) => {
+      console.log(res);
+      this.birds = res;
     });
   }
 

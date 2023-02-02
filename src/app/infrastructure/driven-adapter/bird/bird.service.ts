@@ -15,4 +15,8 @@ export class BirdService extends BirdGateway {
   createBird(country: IBirdModel): Observable<IBirdModel> {
     return this.http.post<IBirdModel>('http://localhost:10000/bird', country);
   }
+
+  getBirds(): Observable<IBirdModel[]> {
+    return this.http.get<IBirdModel[]>('http://localhost:10000/bird');
+  }
 }

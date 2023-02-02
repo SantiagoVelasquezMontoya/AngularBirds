@@ -15,4 +15,12 @@ export class BirdUseCase {
       })
     );
   }
+
+  getBirds(): Observable<IBirdModel[] | null> {
+    return this.birdGateway.getBirds().pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
+  }
 }
