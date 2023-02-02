@@ -32,4 +32,12 @@ export class CountryUseCase {
       })
     );
   }
+
+  updateCountry(country: ICountryModel): Observable<ICountryModel | null> {
+    return this.countryGateway.updateCountry(country).pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
+  }
 }

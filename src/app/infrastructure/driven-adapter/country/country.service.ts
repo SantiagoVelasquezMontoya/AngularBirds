@@ -26,4 +26,8 @@ export class CountryService extends CountryGateway {
   deleteCountry(): Observable<boolean> {
     return this.http.delete<boolean>('/country');
   }
+
+  updateCountry(country: ICountryModel): Observable<ICountryModel> {
+    return this.http.put<ICountryModel>('/country', country);
+  }
 }
