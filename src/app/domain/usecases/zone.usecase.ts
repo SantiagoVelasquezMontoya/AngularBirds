@@ -16,4 +16,12 @@ export class ZoneUseCase {
       })
     );
   }
+
+  getZones(): Observable<IZoneModel[] | null> {
+    return this.zoneGateway.getZones().pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
+  }
 }

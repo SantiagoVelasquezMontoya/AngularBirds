@@ -3,3 +3,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 2px solid #ccc;
+  padding: 2em;
+  gap: 20px;
+  border-radius: 5px;
+}

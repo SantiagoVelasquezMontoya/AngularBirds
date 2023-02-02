@@ -16,4 +16,8 @@ export class ZoneService extends ZoneGateway {
     console.log('LLegue Service');
     return this.http.post<IZoneModel>('http://localhost:10000/zone', zone);
   }
+
+  getZones(): Observable<IZoneModel[]> {
+    return this.http.get<IZoneModel[]>('http://localhost:10000/zone');
+  }
 }

@@ -1,0 +1,33 @@
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <label for="commonName">Bird Name</label>
+      <input
+        type="text"
+        id="commonName"
+        name="commonName"
+        [(ngModel)]="birdData.commonName"
+      />
+    </div>
+    <div class="input-group">
+      <label for="scientificName">Bird Scientific Name</label>
+      <input
+        type="text"
+        id="scientificName"
+        name="scientificName"
+        [(ngModel)]="birdData.scientificName"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="country">Country</label>
+      <select name="country" id="country" [(ngModel)]="country">
+        <option selected disabled>Choose Country</option>
+        <option [ngValue]="country" *ngFor="let country of countries">
+          {{ country.countryName }}
+        </option>
+      </select>
+    </div>
+    <button type="Submit">Submit</button>
+  </form>
+</div>

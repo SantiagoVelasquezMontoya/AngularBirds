@@ -1,0 +1,23 @@
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <label for="countryName">Country Name</label>
+      <input
+        type="text"
+        id="countryName"
+        name="countryName"
+        [(ngModel)]="countryName"
+      />
+    </div>
+    <div class="input-group">
+      <label for="zone">Zone</label>
+      <select name="zone" id="zone" [(ngModel)]="zone">
+        <option selected disabled>Choose Zone</option>
+        <option [ngValue]="zone" *ngFor="let zone of zones">
+          {{ zone.zoneName }}
+        </option>
+      </select>
+    </div>
+    <button type="Submit">Submit</button>
+  </form>
+</div>
