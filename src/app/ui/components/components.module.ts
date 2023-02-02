@@ -15,6 +15,7 @@ import { CountryComponent } from './country/country.component';
 import { ZoneGateway } from 'src/app/domain/models/zone/gateway/zone.gateway';
 import { CountryGateway } from 'src/app/domain/models/country/gateway/country.gateway';
 import { BirdComponent } from './bird/bird.component';
+import { LoaderComponent } from './loader/loader.component';
 
 // function zoneZoneCaseFactory(zoneGateway: ZoneGateway): ZoneUseCase {
 //   return new ZoneUseCase(zoneGateway);
@@ -39,7 +40,12 @@ import { BirdComponent } from './bird/bird.component';
 // };
 
 @NgModule({
-  declarations: [ZoneComponent, CountryComponent, BirdComponent],
+  declarations: [
+    ZoneComponent,
+    CountryComponent,
+    BirdComponent,
+    LoaderComponent,
+  ],
   imports: [CommonModule, DomainModule, HttpClientModule, FormsModule],
   providers: [
     {
@@ -56,6 +62,6 @@ import { BirdComponent } from './bird/bird.component';
     },
   ],
 
-  exports: [ZoneComponent, CountryComponent, BirdComponent],
+  exports: [ZoneComponent, CountryComponent, BirdComponent, LoaderComponent],
 })
 export class ComponentsModule {}
