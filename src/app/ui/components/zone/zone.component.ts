@@ -33,14 +33,12 @@ export class ZoneComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    console.log('Deleting', id);
     this.zoneUseCase.deleteZone(id).subscribe((res) => {
       console.log(res);
     });
   }
 
   setZoneToUpdate(zone: IZoneModel) {
-    console.log(zone);
     this.updateZone = zone;
   }
 

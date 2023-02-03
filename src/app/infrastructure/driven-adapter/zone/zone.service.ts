@@ -27,8 +27,8 @@ export class ZoneService extends ZoneGateway {
     return this.http.get<IZoneModel[]>('/zone');
   }
 
-  deleteZone(): Observable<boolean> {
-    return this.http.delete<boolean>('/zone', {
+  deleteZone(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`/zone/${id}`, {
       headers: this.httpHeaders,
     });
   }

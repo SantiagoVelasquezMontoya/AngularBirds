@@ -70,8 +70,8 @@
               "browserTarget": "birds:build:production"
             },
             "development": {
-              "browserTarget": "birds:build:development",
-              "proxyConfig": "proxy.config.json"
+              "proxyConfig": "proxy.config.json",
+              "browserTarget": "birds:build:development"
             }
           },
           "defaultConfiguration": "development"

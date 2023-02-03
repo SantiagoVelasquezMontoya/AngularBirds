@@ -23,11 +23,9 @@ export class BirdComponent implements OnInit {
 
   ngOnInit(): void {
     this.countryUseCase.getCountries().subscribe((res) => {
-      console.log(res);
       this.countries = res;
     });
     this.birdUseCase.getBirds().subscribe((res) => {
-      console.log(res);
       this.birds = res;
     });
   }

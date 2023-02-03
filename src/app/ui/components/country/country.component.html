@@ -1,39 +1,43 @@
-<div class="container">
-  <div class="form-container">
-    <form (ngSubmit)="onSubmit()">
-      <div class="input-group">
-        <label for="countryName">Country Name</label>
-        <input
-          type="text"
-          id="countryName"
-          name="countryName"
-          [(ngModel)]="countryName"
-        />
-      </div>
-      <div class="input-group">
-        <label for="zone">Zone</label>
-        <select name="zone" id="zone" [(ngModel)]="zone">
-          <option selected disabled>Choose Zone</option>
-          <option [ngValue]="zone" *ngFor="let zone of zones">
-            {{ zone.zoneName }}
-          </option>
-        </select>
-      </div>
-      <button type="Submit">Submit</button>
-    </form>
-  </div>
-  <div class="zones-container">
-    <ul *ngIf="currentCountries.length > 0; else noCountries">
-      <li *ngFor="let country of currentCountries">
-        <p>{{ country.countryName }}</p>
-        <button (click)="onDelete(country.id)">Delete</button>
-      </li>
-    </ul>
-  </div>
-
-  <ng-template #noCountries>
-    <div>
-      <h2>There aren't any Countries yet...</h2>
+<div class="main-container">
+  <div class="container">
+    <div class="form-container">
+      <form (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="countryName">Country Name</label>
+          <input
+            type="text"
+            id="countryName"
+            name="countryName"
+            [(ngModel)]="countryName"
+          />
+        </div>
+        <div class="input-group">
+          <label for="zone">Zone</label>
+          <select name="zone" id="zone" [(ngModel)]="zone">
+            <option selected disabled>Choose Zone</option>
+            <option [ngValue]="zone" *ngFor="let zone of zones">
+              {{ zone.zoneName }}
+            </option>
+          </select>
+        </div>
+        <button type="Submit" class="btn submit-btn">Submit</button>
+      </form>
     </div>
-  </ng-template>
+    <div class="zones-container">
+      <ul *ngIf="currentCountries.length > 0; else noCountries">
+        <li *ngFor="let country of currentCountries">
+          <p>{{ country.countryName }}</p>
+          <button (click)="onDelete(country.id)" class="btn danger-btn">
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <ng-template #noCountries>
+      <div>
+        <h2>There aren't any Countries yet...</h2>
+      </div>
+    </ng-template>
+  </div>
 </div>

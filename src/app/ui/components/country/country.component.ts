@@ -23,7 +23,6 @@ export class CountryComponent implements OnInit {
 
   ngOnInit(): void {
     this.zoneUseCase.getZones().subscribe((res) => {
-      console.log(res);
       this.zones = res;
     });
     this.countryUseCase.getCountries().subscribe((res) => {
@@ -32,6 +31,8 @@ export class CountryComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.zone);
+
     const data: ICountryModel = {
       countryName: this.countryName,
       countryZone: this.zone.id,
