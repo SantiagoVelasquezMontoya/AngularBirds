@@ -19,3 +19,20 @@ body {
   height: 100%;
   padding: 2em;
 }
+
+.btn {
+  color: dodgerblue;
+  background-color: dodgerblue;
+}
+
+.danger-btn {
+  color: #fff;
+  background: red;
+  border: 1px solid red;
+}
+
+.edit-btn {
+  color: #fff;
+  background: green;
+  border: 1px solid green;
+}

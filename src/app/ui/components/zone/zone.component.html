@@ -14,11 +14,18 @@
     </form>
   </div>
   <div class="zones-container">
+    <h3>Available Zones:</h3>
     <ul *ngIf="currentZones.length > 0; else noZones">
       <li *ngFor="let zone of currentZones">
         <p>{{ zone.zoneName }}</p>
-        <button (click)="onDelete(zone.id)">Delete</button>
-        <button (click)="setZoneToUpdate(zone)">Edit</button>
+        <div class="button-row">
+          <button class="btn danger-btn" (click)="onDelete(zone.id)">
+            Delete
+          </button>
+          <button class="btn edit-btn" (click)="setZoneToUpdate(zone)">
+            Edit
+          </button>
+        </div>
       </li>
     </ul>
   </div>
@@ -32,7 +39,7 @@
   <div class="form-container">
     <form (ngSubmit)="onUpdateSubmit()">
       <div class="input-group">
-        <label for="updateZoneName">Update Zone</label>
+        <label for="updateZoneName" class="updateZone">Update Zone</label>
         <input
           type="text"
           id="updateZoneName"

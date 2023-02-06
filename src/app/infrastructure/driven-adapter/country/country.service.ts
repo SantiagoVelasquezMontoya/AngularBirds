@@ -14,13 +14,13 @@ export class CountryService extends CountryGateway {
 
   createCountry(country: ICountryModel): Observable<ICountryModel> {
     return this.http.post<ICountryModel>(
-      'http://localhost:10000/country',
+      '/country',
       country
     );
   }
 
   getCountries(): Observable<ICountryModel[]> {
-    return this.http.get<ICountryModel[]>('http://localhost:10000/country');
+    return this.http.get<ICountryModel[]>('/country');
   }
 
   deleteCountry(): Observable<boolean> {

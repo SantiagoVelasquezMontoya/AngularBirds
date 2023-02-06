@@ -39,3 +39,26 @@
     }
   }
 }
+
+.countries-container {
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  ul {
+    list-style: none;
+    li {
+      font-size: 1.1rem;
+    }
+  }
+  button {
+    font-size: 1.1rem;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}

@@ -1,8 +1,26 @@
 <section class="section home-section">
+  <div class="tabs">
+    <div class="tab" *ngFor="let tab of tabs" (click)="onTabClick(tab.index)">
+      {{ tab.label }}
+    </div>
+  </div>
   <div class="wrapper">
-    <app-zone></app-zone>
-    <app-country></app-country>
-    <app-bird></app-bird>
+    <container-element [ngSwitch]="activeIndex">
+      <div *ngSwitchCase="1">
+        <app-zone></app-zone>
+      </div>
+      <div *ngSwitchCase="2">
+        <app-country></app-country>
+      </div>
+      <div *ngSwitchCase="3">
+        <app-bird></app-bird>
+      </div>
+
+      <div *ngSwitchDefault>
+        <app-zone></app-zone>
+      </div>
+    </container-element>
   </div>
 </section>
+
 <app-loader></app-loader>

@@ -39,3 +39,31 @@
     }
   }
 }
+
+.zones-container {
+  h3 {
+    margin-top: 10px;
+  }
+  ul {
+    list-style: none;
+    li {
+    }
+  }
+  .button-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.updateZone {
+  margin-top: 20px;
+}

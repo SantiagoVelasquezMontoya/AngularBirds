@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .wrapper {
@@ -12,4 +13,22 @@
   padding: 2em;
   gap: 20px;
   border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  .tab {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 0.4em;
+    &:hover {
+      background: #363636;
+      color: #fff;
+    }
+  }
 }

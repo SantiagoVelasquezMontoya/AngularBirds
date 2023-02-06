@@ -36,7 +36,6 @@ export class BirdComponent implements OnInit {
     const data: IBirdModel = {
       commonName: this.birdData.commonName,
       scientificName: this.birdData.scientificName,
-      countriesId: [1],
     };
     console.log(data);
     this.birdUseCase.createBird(data).subscribe((res) => {

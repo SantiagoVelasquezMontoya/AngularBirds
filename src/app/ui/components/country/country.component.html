@@ -22,11 +22,14 @@
       <button type="Submit">Submit</button>
     </form>
   </div>
-  <div class="zones-container">
+  <div class="countries-container">
+    <h3>Available Countries:</h3>
     <ul *ngIf="currentCountries.length > 0; else noCountries">
       <li *ngFor="let country of currentCountries">
         <p>{{ country.countryName }}</p>
-        <button (click)="onDelete(country.id)">Delete</button>
+        <button class="btn danger-btn" (click)="onDelete(country.id)">
+          Delete
+        </button>
       </li>
     </ul>
   </div>
