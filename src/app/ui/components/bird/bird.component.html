@@ -37,7 +37,7 @@
     <ul *ngIf="birds.length > 0; else noBirds">
       <li *ngFor="let bird of birds">
         <p>{{ bird.commonName }}</p>
-        <button (click)="onDelete(bird.id)">Delete</button>
+        <button (click)="onDelete(bird.id)" class="btn danger-btn" >Delete</button>
       </li>
     </ul>
   </div>
@@ -47,6 +47,4 @@
       <h2>There aren't any Birds yet...</h2>
     </div>
   </ng-template>
-
-  <button (click)="TESTBirdUpdate()">TEST Update</button>
 </div>

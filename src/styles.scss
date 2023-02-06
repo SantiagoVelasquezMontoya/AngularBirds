@@ -11,6 +11,9 @@ body {
   height: 100%;
   min-height: 100vh;
   font-family: "Nunito";
+  background: url("https://images.unsplash.com/photo-1572402230267-f3e267c1e5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80");
+  background-position: center;
+  background-size: cover;
 }
 
 .section {
@@ -35,4 +38,9 @@ body {
   color: #fff;
   background: green;
   border: 1px solid green;
+}
+
+.wrapper {
+  background: #fff;
+  backdrop-filter: blur(10px);
 }

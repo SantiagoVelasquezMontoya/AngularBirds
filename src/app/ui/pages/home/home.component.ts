@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   tabs: any[] = [
-    { label: 'Zone', index: 1 },
     { label: 'Country', index: 2 },
+    { label: 'Zone', index: 1 },
     { label: 'Birds', index: 3 },
   ];
   activeIndex: number = 0;
