@@ -26,6 +26,10 @@ body {
 .btn {
   color: dodgerblue;
   background-color: dodgerblue;
+  &:hover {
+    //background: darken($color: #000044, $amount: 10%);
+    filter: saturate(10%);
+  }
 }
 
 .danger-btn {
